@@ -41,11 +41,16 @@ export default function AuthPage() {
     };
 
     return (
-        <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-indigo-500 to-purple-600 p-6">
-            <div className="w-full max-w-md p-8 bg-white rounded-2xl shadow-2xl">
-                <h2 className="text-2xl font-bold mb-6 text-center text-gray-800">
-                    {isLogin ? 'Login to your account' : 'Create a new account'}
-                </h2>
+        <div className="min-h-screen flex items-center justify-center bg-gray-50 px-4">
+            <div className="w-full max-w-md bg-white shadow-md rounded-2xl p-8 space-y-6">
+                <div className="text-center">
+                    <h2 className="text-2xl font-semibold text-gray-800">
+                        {isLogin ? 'Welcome Back' : 'Join Us'}
+                    </h2>
+                    <p className="text-sm text-gray-500 mt-1">
+                        {isLogin ? 'Login to your account' : 'Create your account'}
+                    </p>
+                </div>
 
                 <form onSubmit={handleSubmit} className="space-y-4">
                     {!isLogin && (
@@ -56,13 +61,13 @@ export default function AuthPage() {
                                 placeholder="Full Name"
                                 value={formData.name}
                                 onChange={handleChange}
-                                className="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-400"
+                                className="w-full px-4 py-3 bg-gray-100 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#ff6347]"
                             />
                             <select
                                 name="type"
                                 value={formData.type}
                                 onChange={handleChange}
-                                className="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-400"
+                                className="w-full px-4 py-3 bg-gray-100 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#ff6347]"
                             >
                                 <option value="NORMAL_USER">Normal User</option>
                                 <option value="THERAPIST">Therapist</option>
@@ -74,7 +79,7 @@ export default function AuthPage() {
                                     placeholder="Therapy Price"
                                     value={formData.price}
                                     onChange={handleChange}
-                                    className="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-400"
+                                    className="w-full px-4 py-3 bg-gray-100 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#ff6347]"
                                 />
                             )}
                         </>
@@ -86,7 +91,7 @@ export default function AuthPage() {
                         placeholder="Email"
                         value={formData.email}
                         onChange={handleChange}
-                        className="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-400"
+                        className="w-full px-4 py-3 bg-gray-100 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#ff6347]"
                     />
                     <input
                         type="password"
@@ -94,26 +99,26 @@ export default function AuthPage() {
                         placeholder="Password"
                         value={formData.password}
                         onChange={handleChange}
-                        className="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-400"
+                        className="w-full px-4 py-3 bg-gray-100 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#ff6347]"
                     />
 
                     <button
                         type="submit"
-                        className="w-full py-3 bg-indigo-600 text-white font-semibold rounded-lg hover:bg-indigo-700 transition"
+                        className="w-full py-3 bg-[#ff6347] text-white rounded-lg font-medium hover:bg-[#e5533d] transition-colors"
                     >
                         {isLogin ? 'Login' : 'Register'}
                     </button>
                 </form>
 
-                <p className="text-center mt-4 text-sm text-gray-600">
+                <div className="text-center text-sm text-gray-500">
                     {isLogin ? "Don't have an account?" : 'Already have an account?'}{' '}
-                    <button onClick={toggleForm} className="text-indigo-600 hover:underline">
+                    <button onClick={toggleForm} className="text-[#ff6347] hover:underline ml-1">
                         {isLogin ? 'Register' : 'Login'}
                     </button>
-                </p>
+                </div>
 
                 {message && (
-                    <p className="mt-4 text-center text-sm text-red-500">{message}</p>
+                    <p className="text-center text-sm text-red-500">{message}</p>
                 )}
             </div>
         </div>

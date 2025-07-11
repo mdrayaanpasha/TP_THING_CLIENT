@@ -21,7 +21,7 @@ export default function AuthPage() {
         setFormData(prev => ({ ...prev, [e.target.name]: e.target.value }));
     };
 
-    const BACKEND_URL = `http://localhost:3000`;
+    const BACKEND_URL = `http://localhost:4000`;
 
     const handleSubmit = async (e) => {
         e.preventDefault();

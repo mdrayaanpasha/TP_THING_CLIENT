@@ -65,7 +65,7 @@ const Chat = () => {
         };
 
         socketRef.current?.send(JSON.stringify(msg));
-        setMessages(prev => [...prev, { fromId: 'me', toId: to_id, content: input }]);
+        // setMessages(prev => [...prev, { fromId: 'me', toId: to_id, content: input }]);
         setInput('');
         scrollToBottom();
     };

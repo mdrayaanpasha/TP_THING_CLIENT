@@ -26,7 +26,7 @@ export default function TherapistDirectory() {
 
     const handleBook = async (e) => {
         e.preventDefault();
-        if (!selected) return;
+        // if (!selected) return;
 
         const token = localStorage.getItem('dost_token');
         if (!token) {
@@ -40,7 +40,7 @@ export default function TherapistDirectory() {
                 {
                     therapistId: selected.id,
                     date: form.date,
-                    title: form.title,
+                    title: "",
                     therapyType: form.therapyType,
                 },
                 {
@@ -120,14 +120,7 @@ export default function TherapistDirectory() {
 
                         <h2 className="text-xl font-bold mb-4">Book with {selected.name}</h2>
                         <form onSubmit={handleBook} className="space-y-4">
-                            <input
-                                type="text"
-                                placeholder="Session Title"
-                                value={form.title}
-                                onChange={(e) => setForm({ ...form, title: e.target.value })}
-                                className="w-full p-3 border border-gray-300 rounded-lg text-sm"
-                                required
-                            />
+
                             <input
                                 type="datetime-local"
                                 value={form.date}

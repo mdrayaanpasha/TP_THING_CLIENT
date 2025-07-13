@@ -19,7 +19,7 @@ export default function Vcall() {
 
         const fetchRoomDetails = async () => {
             try {
-                const res = await fetch('http://localhost:4000/api/therapy/video-call-room', {
+                const res = await fetch('https://apidost.vercel.app/api/therapy/video-call-room', {
                     headers: {
                         Authorization: `Bearer ${token}`,
                     },

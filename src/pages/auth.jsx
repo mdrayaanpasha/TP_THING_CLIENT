@@ -21,7 +21,7 @@ export default function AuthPage() {
         setFormData(prev => ({ ...prev, [e.target.name]: e.target.value }));
     };
 
-    const BACKEND_URL = `http://localhost:4000`;
+    const BACKEND_URL = `https://apidost.vercel.app`;
 
     const handleSubmit = async (e) => {
         e.preventDefault();

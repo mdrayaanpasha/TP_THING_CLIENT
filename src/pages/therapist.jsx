@@ -9,7 +9,7 @@ export default function TherapistDirectory() {
     const [message, setMessage] = useState('');
     const [form, setForm] = useState({ title: '', date: '', therapyType: 'MESSAGE' });
 
-    const BACKEND_URL = `http://localhost:4000`;
+    const BACKEND_URL = `https://apidost.vercel.app`;
     const navigate = useNavigate();
 
     useEffect(() => {

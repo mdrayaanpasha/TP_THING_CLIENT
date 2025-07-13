@@ -51,7 +51,7 @@ export default function App() {
         const fetchMessages = async () => {
             try {
                 const token = localStorage.getItem("dost_token"); // Re-fetch token to ensure it's fresh
-                const res = await fetch(`http://localhost:4000/api/messages/getAllMessages/${to_id}`, {
+                const res = await fetch(`https://apidost.vercel.app/api/messages/getAllMessages/${to_id}`, {
                     headers: {
                         Authorization: `Bearer ${token}`
                     }

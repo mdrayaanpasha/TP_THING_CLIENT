@@ -1,0 +1,32 @@
+{
+    "routes": [
+        {
+            "src": "/",
+            "dest": "/"
+        },
+        {
+            "src": "/auth",
+            "dest": "/"
+        },
+        {
+            "src": "/my-sessions",
+            "dest": "/"
+        },
+        {
+            "src": "/sessions",
+            "dest": "/"
+        },
+        {
+            "src": "/chat/to/:to_id",
+            "dest": "/"
+        },
+        {
+            "src": "/videoCall",
+            "dest": "/"
+        },
+        {
+            "src": "/therapist-dashboard",
+            "dest": "/"
+        }
+    ]
+}

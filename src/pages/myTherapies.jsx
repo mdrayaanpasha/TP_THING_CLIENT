@@ -8,7 +8,7 @@ export default function UserTherapySessions() {
     const [error, setError] = useState('');
     const [loading, setLoading] = useState(false);
     const navigate = useNavigate();
-    const BACKEND_URL = `http://localhost:4000`;
+    const BACKEND_URL = `https://apidost.vercel.app`;
 
     useEffect(() => {
         const fetchSessions = async () => {

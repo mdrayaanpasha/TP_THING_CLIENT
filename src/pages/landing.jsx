@@ -319,7 +319,7 @@ function Homepage() {
             {/* Testimonial Card 1 */}
             <div className="bg-white p-8 rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-300 ease-in-out transform hover:-translate-y-2 flex flex-col items-center text-center group">
               {/* You could add a small profile image here for more impact if available */}
-              <p className="text-gray-700 italic text-md mb-4 leading-relaxed">"YourDost helped me navigate through a tough phase. Incredibly supportive!"</p>
+              <p className="text-gray-700 italic text-md mb-4 leading-relaxed">"besties helped me navigate through a tough phase. Incredibly supportive!"</p>
               <p className="font-bold text-gray-800 text-lg">- Anjali R.</p>
               <p className="text-sm text-[#CD5C5C] mt-1">Battled Anxiety</p>
             </div>
@@ -412,7 +412,7 @@ function Homepage() {
 
             {/* Brand Info */}
             <div className="md:col-span-1">
-              <h3 className="text-3xl font-extrabold mb-4 leading-tight text-white">YourDost</h3>
+              <h3 className="text-3xl font-extrabold mb-4 leading-tight text-white">besties</h3>
               <p className="text-sm opacity-90 leading-relaxed max-w-xs text-[#FFE0E0]">
                 Your trusted partner for mental wellness. We're here to listen, support, and guide you.
               </p>

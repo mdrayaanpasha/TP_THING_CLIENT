@@ -9,10 +9,39 @@ export default function UserTherapySessions() {
     const [loading, setLoading] = useState(false);
     const navigate = useNavigate();
     const BACKEND_URL = `https://apidost.vercel.app`;
+    const token = localStorage.getItem('dost_token');
+
+    if (!token) {
+        return (
+            <section className="flex flex-col items-center justify-center min-h-screen bg-[#E5533D] text-white p-8">
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="w-24 h-24 mb-4"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    strokeWidth={2}
+                >
+                    <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M13 16h-1v-4h-1m1-4h.01M12 20c4.418 0 8-3.582 8-8s-3.582-8-8-8-8 3.582-8 8 3.582 8 8 8z"
+                    />
+                </svg>
+                <h1 className="text-xl font-bold mb-2">You're not logged in</h1>
+                <p className="mb-4 opacity-80">Please log in to continue.</p>
+                <button
+                    onClick={() => navigate('/auth')}
+                    className="bg-white text-[#E5533D] font-semibold px-4 py-2 rounded-lg hover:bg-gray-200 transition"
+                >
+                    Go to Login
+                </button>
+            </section>
+        );
+    }
 
     useEffect(() => {
         const fetchSessions = async () => {
-            const token = localStorage.getItem('dost_token');
             if (!token) return setError('User not logged in.');
 
             try {
@@ -104,22 +133,21 @@ export default function UserTherapySessions() {
                                 </div>
 
                                 <div className="flex flex-col items-start sm:items-end gap-2">
-                                    {isWithinTwoHours(session.date) ? (
-                                        <button
-                                            onClick={() => handleSessionAction(session)}
-                                            className="px-4 py-2 text-white rounded-full bg-gradient-to-tr from-[#ff6a5e] to-[#ff8473] hover:shadow-md text-sm"
-                                        >
-                                            {session.therapyType === 'MESSAGE' ? 'Chat Now' : 'Join Video'}
-                                        </button>
-                                    ) : (
-                                        <button
-                                            onClick={() => handleCancel(session.id)}
-                                            disabled={loading}
-                                            className="px-4 py-2 border border-[#ff6347] text-[#ff6347] rounded-full hover:bg-[#fff4f2] disabled:opacity-50 transition text-sm"
-                                        >
-                                            Cancel
-                                        </button>
-                                    )}
+                                    <button
+                                        onClick={() => handleSessionAction(session)}
+                                        className="px-4 py-2 text-white rounded-full bg-gradient-to-tr from-[#ff6a5e] to-[#ff8473] hover:shadow-md text-sm"
+                                    >
+                                        {session.therapyType === 'MESSAGE' ? 'Chat Now' : 'Join Video'}
+                                    </button>
+
+                                    <button
+                                        onClick={() => handleCancel(session.id)}
+                                        disabled={loading}
+                                        className="px-4 py-2 border border-[#ff6347] text-[#ff6347] rounded-full hover:bg-[#fff4f2] disabled:opacity-50 transition text-sm"
+                                    >
+                                        Cancel
+                                    </button>
+
                                 </div>
                             </div>
                         </div>

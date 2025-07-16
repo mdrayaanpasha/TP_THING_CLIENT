@@ -21,7 +21,7 @@ export default function AuthPage() {
         setFormData(prev => ({ ...prev, [e.target.name]: e.target.value }));
     };
 
-    const BACKEND_URL = `https://apidost.vercel.app`;
+    const BACKEND_URL = `http://localhost:4000`;
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -35,6 +35,7 @@ export default function AuthPage() {
             const res = await axios.post(url, payload);
             setMessage(res.data.message);
             if (res.data.token) localStorage.setItem('dost_token', res.data.token);
+            window.location.href = "/"
         } catch (err) {
             setMessage(err.response?.data?.message || 'Something went wrong');
         }

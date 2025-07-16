@@ -158,10 +158,10 @@ export default function App() {
             {/* Chat Header */}
             <div className="bg-white p-4 shadow-md flex items-center justify-between">
                 <h2 className="text-2xl font-bold text-gray-800 flex items-center gap-2">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-7 w-7 text-blue-500" viewBox="0 0 24 24" fill="currentColor">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-7 w-7 text-[#E5533D]" viewBox="0 0 24 24" fill="currentColor">
                         <path d="M20 2H4C2.9 2 2 2.9 2 4v18l4-4h14c1.1 0 2-0.9 2-2V4c0-1.1-0.9-2-2-2zM9.5 13.5c-0.83 0-1.5-0.67-1.5-1.5s0.67-1.5 1.5-1.5 1.5 0.67 1.5 1.5-0.67 1.5-1.5 1.5zM14.5 13.5c-0.83 0-1.5-0.67-1.5-1.5s0.67-1.5 1.5-1.5 1.5 0.67 1.5 1.5-0.67 1.5-1.5 1.5zM19.5 13.5c-0.83 0-1.5-0.67-1.5-1.5s0.67-1.5 1.5-1.5 1.5 0.67 1.5 1.5-0.67 1.5-1.5 1.5z" />
                     </svg>
-                    Chat with User <span className="text-blue-600">{to_id}</span>
+                    Chat with User <span className="text-[#E5533D]">{to_id}</span>
                 </h2>
                 {/* Could add user status or avatar here */}
             </div>
@@ -180,7 +180,7 @@ export default function App() {
                     >
                         <div
                             className={`max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg xl:max-w-xl p-3 rounded-xl shadow-sm break-words
-                                ${msg.fromId === userId ? 'bg-blue-500 text-white rounded-br-none' : 'bg-gray-200 text-gray-800 rounded-bl-none'}`}
+                                ${msg.fromId === userId ? 'bg-[#E5533D] text-white rounded-br-none' : 'bg-gray-200 text-gray-800 rounded-bl-none'}`}
                         >
                             {msg.content}
                         </div>
